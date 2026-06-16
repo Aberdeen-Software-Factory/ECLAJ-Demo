@@ -20,9 +20,6 @@ if (footerMount) {
       <div class="foot-inner">
         <div class="foot-left">
           <span class="foot-text">UK-CLAD &copy; ${currentYear}</span>
-          <span class="foot-sep">|</span>
-          <img src="${base}assets/images/UoA-Primary-Logo-RGB-2023.png" alt="University of Aberdeen" class="foot-logo foot-logo-light">
-          <img src="${base}assets/images/UoA-Primary-Logo-MONO-white.png" alt="University of Aberdeen" class="foot-logo foot-logo-dark">
         </div>
         <nav aria-label="Footer navigation">
           <a href="#">Link one</a>
