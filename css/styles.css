@@ -201,6 +201,32 @@ body {
   transform: scaleX(1);
 }
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-uoa-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  padding-right: 1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.nav-uoa-logo-dark {
+  display: none;
+}
+
+[data-theme="dark"] .nav-uoa-logo-light {
+  display: none;
+}
+
+[data-theme="dark"] .nav-uoa-logo-dark {
+  display: block;
+}
+
 /* HAMBURGER MENU */
 
 .hamburger {
@@ -1047,7 +1073,7 @@ footer a:hover { color: var(--color-accent); }
 
 /* RESPONSIVENESS */
 
-@media (max-width: 830px) {
+@media (max-width: 1000px) {
   .hamburger {
     display: flex;
     align-items: center;
