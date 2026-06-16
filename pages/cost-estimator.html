@@ -79,6 +79,7 @@
     <!-- INPUTS SECTION START -->
 
     <section class="estimator-grid" aria-label="Cost estimator">
+      <div class="estimator-left">
       <form class="estimator-panel estimator-form" id="cost-estimator-form">
         <h2>Inputs</h2>
 
@@ -122,9 +123,20 @@
           <span>Non-solicitor fees</span>
         </label>
 
-        <button type="submit" disabled>Calculate estimate</button>
         <!-- Button kept for explicit calculation, although the result also updates when inputs change. -->
+        <!-- <button type="submit" disabled>Calculate estimate</button> -->
       </form>
+
+      <section class="estimator-panel estimator-notes">
+        <h2>How this is calculated</h2>
+        <p>
+          This prototype follows the updated Excel lookup model. It selects billable
+          hours and base solicitor fees by case tier and procedural phase, applies
+          the tier's disbursement factor for expert and counsel costs, and estimates
+          compensated costs using the 56.6% Rule 104 recovery rate.
+        </p>
+      </section>
+      </div>
 
       <!-- INPUTS SECTION END -->
 
@@ -163,39 +175,15 @@
               <dd id="unrecoverable-sunk-cost">-</dd>
             </div>
           </dl>
-        </section>
-
-        <!-- RESULTS AND DOWNLOADS SECTION END -->
-
-        <!-- DOWNLOADS SECTION START -->
-
-        <section class="estimator-panel estimator-downloads">
-          <h2>Downloads</h2>
           <div class="download-actions">
             <button type="button" disabled>Download result</button>
             <button type="button" disabled>Download spreadsheet</button>
           </div>
-          <p>
-            Downloads are not enabled yet. They can be added if Claudio confirms
-            calculator results need to be exportable.
-          </p>
         </section>
       </div>
     </section>
 
     <!-- DOWNLOADS SECTION END -->
-
-
-
-    <section class="estimator-panel estimator-notes">
-      <h2>How this is calculated</h2>
-      <p>
-        This prototype follows the updated Excel lookup model. It selects billable
-        hours and base solicitor fees by case tier and procedural phase, applies
-        the tier's disbursement factor for expert and counsel costs, and estimates
-        compensated costs using the 56.6% Rule 104 recovery rate.
-      </p>
-    </section>
   </main>
 
   <div id="site-footer"></div>
