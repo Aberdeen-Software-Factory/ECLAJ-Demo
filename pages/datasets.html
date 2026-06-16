@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coding Book and Datasets | UK-CLAD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="../index.html">
+      UK-CLAD
+      <span class="site-logo-sub">Competition Litigation Dataset</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="datasets.html" aria-current="page">Datasets</a>
+      <a href="cost-estimator.html">Cost estimator</a>
+      <button class="tbtn theme-toggle" id="tbtn" type="button" aria-label="Toggle theme">
+        <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
+          height="14">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="tbtn-moon" viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
+          <path
+            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+        </svg>
+      </button>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <div id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="datasets.html" aria-current="page">Datasets</a></li>
+      <li><a href="cost-estimator.html">Cost estimator</a></li>
+    </ul>
+    <button class="tbtn theme-toggle mobile-theme-toggle" type="button" aria-label="Toggle theme">
+      <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
+        height="14">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+      <svg class="tbtn-moon" viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      </svg>
+      <span>Toggle theme</span>
+    </button>
+  </div>
+
+  <main class="page-shell datasets-page">
+    <section class="datasets-hero" aria-labelledby="datasets-title">
+      <div class="datasets-hero-copy">
+        <h1 id="datasets-title">Coding book and datasets</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          posuere erat a ante venenatis dapibus posuere velit aliquet ipsum
+          ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat
+          a ante venenatis dapibus posuere velit aliquet ipsum ipsum dolor sit
+          amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis.
+        </p>
+      </div>
+      <aside class="datasets-image-placeholder" aria-label="Image placeholder">
+        <span>Image here?</span>
+      </aside>
+    </section>
+
+    <section class="resource-grid" aria-label="Top resources">
+      <article class="resource-card">
+        <span class="resource-label">Published paper</span>
+        <h2>Analysing Judicial Case Data for Access to Justice: A Methodological Framework</h2>
+        <p class="resource-meta">Claudio Lombardi</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          posuere erat a ante venenatis dapibus.
+        </p>
+        <button class="resource-action" type="button" disabled>Link coming soon</button>
+      </article>
+
+      <article class="resource-card">
+        <span class="resource-label">Coding book</span>
+        <h2>Coding book</h2>
+        <p class="resource-meta">Documentation</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          posuere erat a ante venenatis dapibus.
+        </p>
+        <button class="resource-action" type="button" disabled>Link coming soon</button>
+      </article>
+
+      <article class="resource-card">
+        <span class="resource-label">Dataset access</span>
+        <h2>Dataset access</h2>
+        <p class="resource-meta">Request-only access</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          posuere erat a ante venenatis dapibus.
+        </p>
+        <button class="resource-action" type="button" disabled>Link coming soon</button>
+      </article>
+    </section>
+
+    <section class="datasets-detail-grid" aria-label="Dataset notes">
+      <article class="datasets-panel datasets-panel-placeholder">
+        <span class="placeholder-status">To confirm with Claudio</span>
+        <h2>Citation and version notes</h2>
+        <p>Paper citation, dataset version, publication date, and reuse wording.</p>
+      </article>
+
+      <article class="datasets-panel datasets-panel-placeholder">
+        <span class="placeholder-status">To confirm with Claudio</span>
+        <h2>What the dataset covers</h2>
+        <p>Dataset scope, included variables, date range, and coverage notes.</p>
+      </article>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/downloads.js"></script>
+</body>
+
+</html>

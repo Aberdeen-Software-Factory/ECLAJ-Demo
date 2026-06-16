@@ -1,14 +1,148 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ECLAJ Test Page</title>
-  </head>
-  <body>
-    <main>
-      <h1>Hello world from ECLAJ</h1>
-      <p>This is a basic GitHub Pages test page.</p>
-    </main>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK-CLAD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="index.html">
+      UK-CLAD
+      <span class="site-logo-sub">Competition Litigation Dataset</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/datasets.html">Datasets</a>
+      <a href="pages/cost-estimator.html">Cost estimator</a>
+      <button class="tbtn theme-toggle" id="tbtn" type="button" aria-label="Toggle theme">
+        <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="tbtn-moon" viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+      </button>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </header>
+
+  <div id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-nav">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/datasets.html">Datasets</a></li>
+      <li><a href="pages/cost-estimator.html">Cost estimator</a></li>
+    </ul>
+    <button class="tbtn theme-toggle mobile-theme-toggle" type="button" aria-label="Toggle theme">
+      <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="tbtn-moon" viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      </svg>
+      <span>Toggle theme</span>
+    </button>
+  </div>
+
+  <main class="page-shell">
+
+    <!-- TOP SECTION: PROJECT INFO -->
+    <section class="home-hero">
+      <div class="home-hero-text">
+        <h1 class="home-title">UK Competition Litigation and Collective Actions Dataset</h1>
+        <p class="home-subtitle">The study provides a longitudinal analysis of damages actions in the UK, focusing in particular on collective actions, access to justice, and litigation trends over time. It draws on an original dataset and aims to offer both descriptive insights and a basis for comparative work in the future.</p>
+      </div>
+      <div class="home-visual">
+        <p>Placeholder visual: chart / timeline / case-flow graphic</p>
+      </div>
+    </section>
+
+    <!-- FEATURE CARDS -->
+    <section class="home-cards" aria-label="Site sections">
+      <article class="home-card">
+        <svg class="home-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- Person 2 (background, right) drawn first so person 1 renders on top -->
+          <circle cx="16" cy="7" r="3.5"/>
+          <path d="M22 21v-2a4 4 0 0 0-4-4h-4"/>
+          <!-- Person 1 (foreground, left) -->
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        </svg>
+        <h2 class="home-card-title">About the project</h2>
+        <p class="home-card-desc">Project aims, methodology, team and advisory board.</p>
+        <a href="pages/about.html" class="home-card-link">Learn more</a>
+      </article>
+      <article class="home-card">
+        <svg class="home-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="5" width="20" height="14" rx="1.5"/>
+          <line x1="2" y1="10" x2="22" y2="10"/>
+          <line x1="2" y1="14.5" x2="22" y2="14.5"/>
+          <line x1="8" y1="5" x2="8" y2="19"/>
+          <line x1="15" y1="5" x2="15" y2="19"/>
+        </svg>
+        <h2 class="home-card-title">Download the data</h2>
+        <p class="home-card-desc">Coding book, datasets, versions and reuse guidance.</p>
+        <a href="pages/datasets.html" class="home-card-link">Learn more</a>
+      </article>
+      <article class="home-card">
+        <svg class="home-card-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="2" width="16" height="20" rx="2"/>
+          <rect x="6.5" y="5" width="11" height="4" rx="1"/>
+          <rect x="6.5" y="12" width="3" height="3" rx="0.5"/>
+          <rect x="10.5" y="12" width="3" height="3" rx="0.5"/>
+          <rect x="14.5" y="12" width="3" height="3" rx="0.5"/>
+          <rect x="6.5" y="17" width="3" height="3" rx="0.5"/>
+          <rect x="10.5" y="17" width="3" height="3" rx="0.5"/>
+          <rect x="14.5" y="17" width="3" height="3" rx="0.5"/>
+        </svg>
+        <h2 class="home-card-title">Estimate costs</h2>
+        <p class="home-card-desc">Interactive litigation cost estimator based on selected inputs.</p>
+        <a href="pages/cost-estimator.html" class="home-card-link">Learn more</a>
+      </article>
+    </section>
+
+    <!-- DATASET OVERVIEW -->
+    <section class="home-overview">
+      <h2 class="home-overview-title">Dataset overview</h2>
+      <div class="home-stats">
+        <div class="home-stat">
+          <p class="home-stat-label">Cases</p>
+          <p class="home-stat-value">Client-provided figure / placeholder</p>
+        </div>
+        <div class="home-stat">
+          <p class="home-stat-label">Years</p>
+          <p class="home-stat-value">Client-provided figure / placeholder</p>
+        </div>
+        <div class="home-stat">
+          <p class="home-stat-label">Action types</p>
+          <p class="home-stat-value">Client-provided figure / placeholder</p>
+        </div>
+        <div class="home-stat">
+          <p class="home-stat-label">Downloads</p>
+          <p class="home-stat-value">Client-provided figure / placeholder</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/footer.js"></script>
+</body>
+
 </html>

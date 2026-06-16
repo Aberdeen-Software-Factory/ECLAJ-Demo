@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cost Estimator | UK-CLAD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="../index.html">
+      UK-CLAD
+      <span class="site-logo-sub">Competition Litigation Dataset</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="datasets.html">Datasets</a>
+      <a href="cost-estimator.html" aria-current="page">Cost estimator</a>
+      <button class="tbtn theme-toggle" id="tbtn" type="button" aria-label="Toggle theme">
+        <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
+          height="14">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg class="tbtn-moon" viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
+          <path
+            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+        </svg>
+      </button>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </header>
+
+  <div id="mobile-menu" aria-hidden="true">
+    <ul class="mobile-nav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="datasets.html">Datasets</a></li>
+      <li><a href="cost-estimator.html" aria-current="page">Cost estimator</a></li>
+    </ul>
+    <button class="tbtn theme-toggle mobile-theme-toggle" type="button" aria-label="Toggle theme">
+      <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="tbtn-moon" viewBox="0 0 16 16" fill="currentColor" width="11" height="11">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+      </svg>
+      <span>Toggle theme</span>
+    </button>
+  </div>
+
+  <main class="page-shell">
+    <section class="estimator-intro">
+      <h1>Cost estimator tool</h1>
+      <p>
+        Loern ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      </p>
+    </section>
+
+
+    <!-- INPUTS SECTION START -->
+
+    <section class="estimator-grid" aria-label="Cost estimator">
+      <form class="estimator-panel estimator-form" id="cost-estimator-form">
+        <h2>Inputs</h2>
+
+        <label for="case-complexity">
+          Case complexity tier
+          <select id="case-complexity" name="tier">
+            <option value="" selected disabled>Select case complexity</option>
+            <option value="fast-track">Fast Track</option>
+            <option value="bilateral-simple">Bilateral: Simple</option>
+            <option value="bilateral-medium">Bilateral: Medium</option>
+            <option value="bilateral-complex">Bilateral: Complex</option>
+            <option value="collective-actions">Collective Actions</option>
+          </select>
+        </label>
+
+        <!-- Number of parties removed from active UI: the updated Excel calculator no longer uses this input.
+        <label for="party-count">
+          Number of parties
+          <input id="party-count" name="parties" type="text" inputmode="numeric" pattern="[0-9]+" maxlength="4"
+            value="3">
+        </label>
+        -->
+
+        <label for="proceedings-phase">
+          Procedural phase
+          <select id="proceedings-phase" name="phase">
+            <option value="" selected disabled>Select procedural phase</option>
+            <option value="pre-action-pleadings">1. Pre-Action and Pleadings</option>
+            <option value="case-management">2. Case Management (CMCs)</option>
+            <option value="disclosure-discovery">3. Disclosure / Discovery</option>
+            <option value="witness-statements">4. Witness Statements</option>
+            <option value="expert-evidence">5. Expert Evidence</option>
+            <option value="trial-prep-hearing">6. Trial Prep and Hearing</option>
+            <option value="costs-settlement">7. Costs and Settlement</option>
+            <option value="full-case">8. FULL CASE (All Phases)</option>
+          </select>
+        </label>
+
+        <label class="checkbox-row" for="non-solicitor-fees">
+          <input id="non-solicitor-fees" name="includeNonSolicitorFees" type="checkbox">
+          <span>Non-solicitor fees</span>
+        </label>
+
+        <button type="submit" disabled>Calculate estimate</button>
+        <!-- Button kept for explicit calculation, although the result also updates when inputs change. -->
+      </form>
+
+      <!-- INPUTS SECTION END -->
+
+      <!-- RESULTS AND DOWNLOADS SECTION START -->
+
+      <div class="estimator-side">
+        <section class="estimator-panel estimator-result" aria-live="polite">
+          <h2>Estimated result</h2>
+          <dl>
+            <div>
+              <dt>Estimated billable hours</dt>
+              <dd id="estimated-hours">-</dd>
+            </div>
+            <div>
+              <dt>Base solicitor fees</dt>
+              <dd id="base-solicitor-fees">-</dd>
+            </div>
+            <div>
+              <dt>Disbursement factor</dt>
+              <dd id="disbursement-factor">-</dd>
+            </div>
+            <div>
+              <dt>Estimated disbursements</dt>
+              <dd id="estimated-disbursements">-</dd>
+            </div>
+            <div>
+              <dt>Total claimed cost</dt>
+              <dd id="total-claimed-cost">-</dd>
+            </div>
+            <div>
+              <dt>Compensated costs [56.6% Rule 104]</dt>
+              <dd id="compensated-costs">-</dd>
+            </div>
+            <div class="unrecoverable-cost-row">
+              <dt>Unrecoverable sunk cost</dt>
+              <dd id="unrecoverable-sunk-cost">-</dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- RESULTS AND DOWNLOADS SECTION END -->
+
+        <!-- DOWNLOADS SECTION START -->
+
+        <section class="estimator-panel estimator-downloads">
+          <h2>Downloads</h2>
+          <div class="download-actions">
+            <button type="button" disabled>Download result</button>
+            <button type="button" disabled>Download spreadsheet</button>
+          </div>
+          <p>
+            Downloads are not enabled yet. They can be added if Claudio confirms
+            calculator results need to be exportable.
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS SECTION END -->
+
+
+
+    <section class="estimator-panel estimator-notes">
+      <h2>How this is calculated</h2>
+      <p>
+        This prototype follows the updated Excel lookup model. It selects billable
+        hours and base solicitor fees by case tier and procedural phase, applies
+        the tier's disbursement factor for expert and counsel costs, and estimates
+        compensated costs using the 56.6% Rule 104 recovery rate.
+      </p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/footer.js"></script>
+  <script src="../js/cost-estimator.js"></script>
+</body>
+
+</html>
