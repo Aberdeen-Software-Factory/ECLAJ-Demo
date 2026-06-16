@@ -386,7 +386,7 @@ footer a:hover { color: var(--color-accent); }
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: start;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .home-hero-text {
