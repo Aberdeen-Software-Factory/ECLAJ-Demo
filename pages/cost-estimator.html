@@ -14,8 +14,10 @@
 <body>
   <header class="site-header">
     <div class="header-brand">
-      <img src="../assets/images/UoA-Primary-Logo-RGB-2023.png" alt="University of Aberdeen" class="nav-uoa-logo nav-uoa-logo-light">
-      <img src="../assets/images/UoA-Primary-Logo-MONO-white.png" alt="University of Aberdeen" class="nav-uoa-logo nav-uoa-logo-dark">
+      <a href="https://www.abdn.ac.uk/" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/images/UoA-Primary-Logo-RGB-2023.png" alt="University of Aberdeen" class="nav-uoa-logo nav-uoa-logo-light">
+        <img src="../assets/images/UoA-Primary-Logo-MONO-white.png" alt="University of Aberdeen" class="nav-uoa-logo nav-uoa-logo-dark">
+      </a>
       <a class="site-logo" href="../index.html">
         UK-CLAD
         <span class="site-logo-sub">Competition Litigation Dataset</span>
@@ -26,6 +28,7 @@
       <a href="about.html">About</a>
       <a href="datasets.html">Datasets</a>
       <a href="cost-estimator.html" aria-current="page">Cost estimator</a>
+      <a href="contact.html">Contact</a>
       <button class="tbtn theme-toggle" id="tbtn" type="button" aria-label="Toggle theme">
         <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
           height="14">
@@ -58,6 +61,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="datasets.html">Datasets</a></li>
       <li><a href="cost-estimator.html" aria-current="page">Cost estimator</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="tbtn theme-toggle mobile-theme-toggle" type="button" aria-label="Toggle theme">
       <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
@@ -118,7 +122,7 @@
             <option value="expert-evidence">5. Expert Evidence</option>
             <option value="trial-prep-hearing">6. Trial Prep and Hearing</option>
             <option value="costs-settlement">7. Costs and Settlement</option>
-            <option value="full-case">8. FULL CASE (All Phases)</option>
+            <option value="full-case">8. Full case (All phases)</option>
           </select>
         </label>
 
@@ -180,8 +184,8 @@
             </div>
           </dl>
           <div class="download-actions">
-            <button type="button" disabled>Download result</button>
-            <button type="button" disabled>Download spreadsheet</button>
+            <button id="download-spreadsheet" type="button" disabled>Download result</button>
+            <p class="download-format-note">Excel workbook (.xlsx)</p>
           </div>
         </section>
       </div>
@@ -195,6 +199,7 @@
   <script src="../js/main.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/footer.js"></script>
+  <script src="../js/survey.js"></script>
   <script src="../js/cost-estimator.js"></script>
 </body>
 

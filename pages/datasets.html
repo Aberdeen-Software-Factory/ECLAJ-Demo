@@ -14,8 +14,12 @@
 <body>
   <header class="site-header">
     <div class="header-brand">
-      <img src="../assets/images/UoA-Primary-Logo-RGB-2023.png" alt="University of Aberdeen" class="nav-uoa-logo nav-uoa-logo-light">
-      <img src="../assets/images/UoA-Primary-Logo-MONO-white.png" alt="University of Aberdeen" class="nav-uoa-logo nav-uoa-logo-dark">
+      <a href="https://www.abdn.ac.uk/" target="_blank" rel="noopener noreferrer">
+        <img src="../assets/images/UoA-Primary-Logo-RGB-2023.png" alt="University of Aberdeen"
+          class="nav-uoa-logo nav-uoa-logo-light">
+        <img src="../assets/images/UoA-Primary-Logo-MONO-white.png" alt="University of Aberdeen"
+          class="nav-uoa-logo nav-uoa-logo-dark">
+      </a>
       <a class="site-logo" href="../index.html">
         UK-CLAD
         <span class="site-logo-sub">Competition Litigation Dataset</span>
@@ -26,6 +30,7 @@
       <a href="about.html">About</a>
       <a href="datasets.html" aria-current="page">Datasets</a>
       <a href="cost-estimator.html">Cost estimator</a>
+      <a href="contact.html">Contact</a>
       <button class="tbtn theme-toggle" id="tbtn" type="button" aria-label="Toggle theme">
         <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
           height="14">
@@ -45,7 +50,8 @@
         </svg>
       </button>
     </nav>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+    <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="mobile-menu"
+      aria-expanded="false">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -58,6 +64,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="datasets.html" aria-current="page">Datasets</a></li>
       <li><a href="cost-estimator.html">Cost estimator</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="tbtn theme-toggle mobile-theme-toggle" type="button" aria-label="Toggle theme">
       <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
@@ -81,6 +88,7 @@
   </div>
 
   <main class="page-shell datasets-page">
+    <!-- Datasets page hero -->
     <section class="datasets-hero" aria-labelledby="datasets-title">
       <div class="datasets-hero-copy">
         <h1 id="datasets-title">Coding book and datasets</h1>
@@ -97,7 +105,8 @@
       </aside>
     </section>
 
-    <section class="resource-grid" aria-label="Top resources">
+    <!-- Paper and coding book resource cards -->
+    <section class="resource-grid resource-grid-two" aria-label="Top resources">
       <article class="resource-card">
         <span class="resource-label">Published paper</span>
         <h2>Analysing Judicial Case Data for Access to Justice: A Methodological Framework</h2>
@@ -120,18 +129,198 @@
         <button class="resource-action" type="button" disabled>Link coming soon</button>
       </article>
 
-      <article class="resource-card">
-        <span class="resource-label">Dataset access</span>
-        <h2>Dataset access</h2>
-        <p class="resource-meta">Request-only access</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-          posuere erat a ante venenatis dapibus.
-        </p>
-        <button class="resource-action" type="button" disabled>Link coming soon</button>
-      </article>
     </section>
 
+    <!-- Versioned dataset approval/download links -->
+    <section class="dataset-downloads" aria-labelledby="dataset-downloads-title">
+      <h2 id="dataset-downloads-title">Dataset downloads</h2>
+      <div class="dataset-downloads-table-wrap">
+        <table class="dataset-downloads-table">
+          <thead>
+            <tr>
+              <th scope="col">Dataset</th>
+              <th scope="col">Format</th>
+              <th scope="col">Version</th>
+              <th scope="col">Notes</th>
+              <th scope="col">
+                <span class="table-heading-with-info">
+                  Download
+                  <span class="table-info table-info-right" tabindex="0" aria-label="Request approval link information" data-tooltip="This opens a request link, not the dataset file. Claudio can review and approve access.">i</span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Master dataset / all cases</td>
+              <td>XLSX</td>
+              <td>v1.0</td>
+              <td>Lorem ipsum dolor</td>
+              <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
+            </tr>
+            <tr>
+              <td>SMEs analysis with sectors</td>
+              <td>XLSX</td>
+              <td>v1.0</td>
+              <td>Lorem ipsum dolor</td>
+              <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
+            </tr>
+            <tr>
+              <td>Collective actions analysis</td>
+              <td>XLSX</td>
+              <td>v1.0</td>
+              <td>Lorem ipsum dolor</td>
+              <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
+            </tr>
+            <tr>
+              <td>Dataset placeholder 4</td>
+              <td>XLSX</td>
+              <td>v1.0</td>
+              <td>Lorem ipsum dolor</td>
+              <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
+            </tr>
+            <tr>
+              <td>Dataset placeholder 5</td>
+              <td>XLSX</td>
+              <td>v1.0</td>
+              <td>Lorem ipsum dolor</td>
+              <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
+            </tr>
+            <tr>
+              <td>Dataset placeholder 6</td>
+              <td>XLSX</td>
+              <td>v1.0</td>
+              <td>Lorem ipsum dolor</td>
+              <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dataset-mobile-list" aria-label="Dataset downloads">
+        <article class="dataset-mobile-card">
+          <h3>Master dataset / all cases</h3>
+          <dl>
+            <div>
+              <dt>Format</dt>
+              <dd>XLSX</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd>Lorem ipsum dolor</dd>
+            </div>
+          </dl>
+          <span class="dataset-download-button" aria-disabled="true">Download</span>
+          <p class="dataset-request-note">Request link for Claudio approval.</p>
+        </article>
+
+        <article class="dataset-mobile-card">
+          <h3>SMEs analysis with sectors</h3>
+          <dl>
+            <div>
+              <dt>Format</dt>
+              <dd>XLSX</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd>Lorem ipsum dolor</dd>
+            </div>
+          </dl>
+          <span class="dataset-download-button" aria-disabled="true">Download</span>
+          <p class="dataset-request-note">Request link for Claudio approval.</p>
+        </article>
+
+        <article class="dataset-mobile-card">
+          <h3>Collective actions analysis</h3>
+          <dl>
+            <div>
+              <dt>Format</dt>
+              <dd>XLSX</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd>Lorem ipsum dolor</dd>
+            </div>
+          </dl>
+          <span class="dataset-download-button" aria-disabled="true">Download</span>
+          <p class="dataset-request-note">Request link for Claudio approval.</p>
+        </article>
+
+        <article class="dataset-mobile-card">
+          <h3>Dataset placeholder 4</h3>
+          <dl>
+            <div>
+              <dt>Format</dt>
+              <dd>XLSX</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd>Lorem ipsum dolor</dd>
+            </div>
+          </dl>
+          <span class="dataset-download-button" aria-disabled="true">Download</span>
+          <p class="dataset-request-note">Request link for Claudio approval.</p>
+        </article>
+
+        <article class="dataset-mobile-card">
+          <h3>Dataset placeholder 5</h3>
+          <dl>
+            <div>
+              <dt>Format</dt>
+              <dd>XLSX</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd>Lorem ipsum dolor</dd>
+            </div>
+          </dl>
+          <span class="dataset-download-button" aria-disabled="true">Download</span>
+          <p class="dataset-request-note">Request link for Claudio approval.</p>
+        </article>
+
+        <article class="dataset-mobile-card">
+          <h3>Dataset placeholder 6</h3>
+          <dl>
+            <div>
+              <dt>Format</dt>
+              <dd>XLSX</dd>
+            </div>
+            <div>
+              <dt>Version</dt>
+              <dd>v1.0</dd>
+            </div>
+            <div>
+              <dt>Notes</dt>
+              <dd>Lorem ipsum dolor</dd>
+            </div>
+          </dl>
+          <span class="dataset-download-button" aria-disabled="true">Download</span>
+          <p class="dataset-request-note">Request link for Claudio approval.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Dataset notes awaiting final project wording -->
     <section class="datasets-detail-grid" aria-label="Dataset notes">
       <article class="datasets-panel datasets-panel-placeholder">
         <span class="placeholder-status">To confirm with Claudio</span>
@@ -152,6 +341,7 @@
   <script src="../js/main.js"></script>
   <script src="../js/navigation.js"></script>
   <script src="../js/footer.js"></script>
+  <script src="../js/survey.js"></script>
   <script src="../js/downloads.js"></script>
 </body>
 

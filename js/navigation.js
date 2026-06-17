@@ -25,7 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     syncMenuTop();
     hamburger.setAttribute('aria-expanded', 'false');
-    window.addEventListener('resize', syncMenuTop);
+    window.addEventListener('resize', () => {
+      syncMenuTop();
+      if (getComputedStyle(hamburger).display === 'none') closeMobileMenu();
+    });
 
     hamburger.addEventListener('click',()=>{
       const isOpen = mobileMenu.classList.toggle('open');

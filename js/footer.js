@@ -22,9 +22,9 @@ if (footerMount) {
           <span class="foot-text">UK-CLAD &copy; ${currentYear}</span>
         </div>
         <nav aria-label="Footer navigation">
-          <a href="#">Link one</a>
-          <a href="#">Link two</a>
-          <a href="#">Link three</a>
+          <a href="${base}pages/about.html">About</a>
+          <a href="${base}pages/contact.html">Contact</a>
+          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=TEMP_SURVEY_LINK" data-survey-link>Take the survey</a>
         </nav>
       </div>
     </footer>
