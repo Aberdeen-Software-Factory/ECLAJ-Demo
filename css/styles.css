@@ -66,7 +66,7 @@ body {
   width: min(100% - 2rem, var(--content-width));
   flex: 1;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 2rem;
   animation: page-in 0.28s ease both;
 }
 
@@ -339,7 +339,12 @@ footer {
   animation: page-in 0.28s ease both;
 }
 
-.foot-left,
+.foot-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 footer nav {
   display: flex;
   align-items: center;
@@ -576,7 +581,7 @@ footer button:focus-visible {
 
 .estimator-intro h1 {
   margin-bottom: 0.5rem;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   line-height: 1.05;
 }
 
@@ -792,84 +797,126 @@ footer button:focus-visible {
 
 /* SURVEY CTA */
 
-.survey-float {
+.survey-panel {
   position: fixed;
-  bottom: 34px;
-  left: 24px;
+  right: 0;
+  bottom: 6rem;
   z-index: 9998;
+  width: 270px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  padding: 1.25rem;
+  box-shadow: -4px 4px 20px rgba(23, 32, 51, 0.1);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
 }
 
-.survey-float-btn {
+.survey-panel.is-open {
+  transform: translateX(0);
+}
+
+.survey-panel-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-muted);
+  padding: 2px;
   display: flex;
   align-items: center;
-  width: 178px;
-  height: 48px;
-  overflow: hidden;
-  border-radius: 28px;
+  justify-content: center;
+}
+
+.survey-panel-close:hover {
+  color: var(--color-text);
+}
+
+.survey-panel-heading {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  padding-right: 1.5rem;
+}
+
+.survey-panel-body {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+.survey-panel-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
   background: var(--color-accent);
-  color: #ffffff;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
   text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(23, 32, 51, 0.18);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.survey-float-btn:hover,
-.survey-float-btn:focus-visible {
-  box-shadow: 0 6px 20px rgba(23, 32, 51, 0.22);
-  transform: scale(1.06);
+.survey-panel-btn:hover {
+  opacity: 0.88;
 }
 
-.survey-float-btn:focus-visible,
+.survey-tab {
+  position: fixed;
+  right: 0;
+  bottom: 6rem;
+  z-index: 9997;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 0.65rem 0.4rem;
+  background: var(--color-accent);
+  border: none;
+  border-radius: 6px 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: -2px 2px 8px rgba(23, 32, 51, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.survey-tab.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.survey-tab:hover {
+  opacity: 0.88;
+}
+
+.survey-tab-text {
+  display: block;
+  transform: rotate(180deg);
+  color: #ffffff;
+}
+
+.survey-panel-btn:focus-visible,
 .contact-survey-link:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
   outline-offset: 3px;
 }
 
-.survey-float-icon {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
+.contact-survey-link {
+  justify-self: flex-start;
 }
 
-.survey-float-label {
-  padding-right: 18px;
-  font-size: 0.86rem;
-  font-weight: 700;
-}
-
-@keyframes survey-nudge {
-  0% {
-    transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(23, 32, 51, 0.18), 0 0 0 0 color-mix(in srgb, var(--color-accent) 58%, transparent);
+@media (max-width: 520px) {
+  .survey-panel {
+    width: 240px;
+    bottom: 4.5rem;
   }
-
-  25% {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(23, 32, 51, 0.22), 0 0 0 8px color-mix(in srgb, var(--color-accent) 28%, transparent);
-  }
-
-  50% {
-    transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(23, 32, 51, 0.18), 0 0 0 16px transparent;
-  }
-
-  75% {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(23, 32, 51, 0.2), 0 0 0 0 transparent;
-  }
-
-  100% {
-    transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(23, 32, 51, 0.18), 0 0 0 0 transparent;
-  }
-}
-
-.survey-float-btn--nudge {
-  animation: survey-nudge 0.9s ease-in-out 3;
 }
 
 /* ABOUT PAGE */
@@ -880,12 +927,16 @@ footer button:focus-visible {
 }
 
 .about-hero {
-  max-width: 48rem;
+  max-width: 100%;
+}
+
+.acknowledgement h2 {
+  font-size: 1.25rem;
 }
 
 .about-hero h1 {
   margin-bottom: 0.65rem;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   line-height: 1.05;
 }
 
@@ -894,6 +945,7 @@ footer button:focus-visible {
 .pi-profile-card p {
   color: var(--color-muted);
 }
+
 
 .about-card-grid {
   display: grid;
@@ -984,9 +1036,10 @@ footer button:focus-visible {
 
 .pi-profile-card {
   display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr) auto;
+  grid-template-columns: 11rem minmax(0, 1fr);
   gap: 1.25rem;
   align-items: center;
+  box-shadow: 0 2px 12px rgba(23, 32, 51, 0.07);
 }
 
 .pi-profile-image {
@@ -1016,12 +1069,25 @@ footer button:focus-visible {
 }
 
 .pi-profile-card p {
-  max-width: 44rem;
+  max-width: 100%;
 }
 
 .pi-profile-link {
+  background: none;
+  border: none;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0;
   margin-top: 0;
+  margin-left: 0.4rem;
   white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.pi-profile-link:hover {
+  color: var(--color-accent);
 }
 
 /* CONTACT PAGE */
@@ -1038,8 +1104,8 @@ footer button:focus-visible {
 
 .contact-hero h1 {
   margin-bottom: 0.65rem;
-  font-size: clamp(1.9rem, 4vw, 2.65rem);
-  line-height: 1.1;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.05;
 }
 
 .contact-hero p,
@@ -1075,10 +1141,6 @@ footer button:focus-visible {
   font-size: 0.94rem;
 }
 
-.contact-survey-link {
-  justify-self: flex-start;
-}
-
 /* PRIVACY PAGE */
 
 .privacy-page {
@@ -1090,8 +1152,8 @@ footer button:focus-visible {
 
 .privacy-hero h1 {
   margin-bottom: 0.65rem;
-  font-size: clamp(1.9rem, 4vw, 2.65rem);
-  line-height: 1.1;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.05;
 }
 
 .privacy-hero p,
@@ -1176,8 +1238,13 @@ footer button:focus-visible {
 
 .cookie-banner-actions {
   display: grid;
+  justify-content: stretch;
   border-top: 1px solid var(--color-border);
   padding: 1rem 1.4rem 1.25rem;
+}
+
+.cookie-banner-actions .cookie-button {
+  width: 100%;
 }
 
 .cookie-button {
@@ -1472,7 +1539,7 @@ footer button:focus-visible {
 
 .datasets-hero h1 {
   margin-bottom: 0.65rem;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   line-height: 1.05;
 }
 
@@ -1883,28 +1950,6 @@ footer button:focus-visible {
 
   .about-page {
     gap: 2rem;
-  }
-
-  .survey-float {
-    right: 1rem;
-    bottom: 4.25rem;
-    left: 1rem;
-  }
-
-  .survey-float-btn {
-    width: 100%;
-    max-width: 11rem;
-    height: 44px;
-  }
-
-  .survey-float-icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .survey-float-label {
-    font-size: 0.84rem;
-    padding-right: 0.85rem;
   }
 
   .datasets-image-placeholder,

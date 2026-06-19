@@ -107,7 +107,7 @@
 
     <!-- Coding book resource card -->
     <section class="resource-grid resource-grid-single" aria-label="Top resources">
-      <article class="resource-card">
+      <article class="resource-card" data-analytics-source="coding_book">
         <span class="resource-label">Coding book</span>
         <h2>Coding book</h2>
         <p class="resource-meta">Documentation</p>
@@ -115,7 +115,7 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
           posuere erat a ante venenatis dapibus.
         </p>
-        <button class="resource-action" type="button" disabled>Link coming soon</button>
+        <button class="resource-action" type="button" data-analytics-event="coding_book_click" disabled>Link coming soon</button>
       </article>
 
     </section>
@@ -140,42 +140,42 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-dataset-name="Master dataset / all cases" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-table">
               <td>Master dataset / all cases</td>
               <td>XLSX</td>
               <td>v1.0</td>
               <td>Lorem ipsum dolor</td>
               <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
             </tr>
-            <tr>
+            <tr data-dataset-name="SMEs analysis with sectors" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-table">
               <td>SMEs analysis with sectors</td>
               <td>XLSX</td>
               <td>v1.0</td>
               <td>Lorem ipsum dolor</td>
               <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
             </tr>
-            <tr>
+            <tr data-dataset-name="Collective actions analysis" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-table">
               <td>Collective actions analysis</td>
               <td>XLSX</td>
               <td>v1.0</td>
               <td>Lorem ipsum dolor</td>
               <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
             </tr>
-            <tr>
+            <tr data-dataset-name="Dataset placeholder 4" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-table">
               <td>Dataset placeholder 4</td>
               <td>XLSX</td>
               <td>v1.0</td>
               <td>Lorem ipsum dolor</td>
               <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
             </tr>
-            <tr>
+            <tr data-dataset-name="Dataset placeholder 5" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-table">
               <td>Dataset placeholder 5</td>
               <td>XLSX</td>
               <td>v1.0</td>
               <td>Lorem ipsum dolor</td>
               <td><span class="dataset-download-button" aria-disabled="true">Download</span></td>
             </tr>
-            <tr>
+            <tr data-dataset-name="Dataset placeholder 6" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-table">
               <td>Dataset placeholder 6</td>
               <td>XLSX</td>
               <td>v1.0</td>
@@ -187,7 +187,7 @@
       </div>
 
       <div class="dataset-mobile-list" aria-label="Dataset downloads">
-        <article class="dataset-mobile-card">
+        <article class="dataset-mobile-card" data-dataset-name="Master dataset / all cases" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-mobile">
           <h3>Master dataset / all cases</h3>
           <dl>
             <div>
@@ -207,7 +207,7 @@
           <p class="dataset-request-note">Request link for Claudio approval.</p>
         </article>
 
-        <article class="dataset-mobile-card">
+        <article class="dataset-mobile-card" data-dataset-name="SMEs analysis with sectors" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-mobile">
           <h3>SMEs analysis with sectors</h3>
           <dl>
             <div>
@@ -227,7 +227,7 @@
           <p class="dataset-request-note">Request link for Claudio approval.</p>
         </article>
 
-        <article class="dataset-mobile-card">
+        <article class="dataset-mobile-card" data-dataset-name="Collective actions analysis" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-mobile">
           <h3>Collective actions analysis</h3>
           <dl>
             <div>
@@ -247,7 +247,7 @@
           <p class="dataset-request-note">Request link for Claudio approval.</p>
         </article>
 
-        <article class="dataset-mobile-card">
+        <article class="dataset-mobile-card" data-dataset-name="Dataset placeholder 4" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-mobile">
           <h3>Dataset placeholder 4</h3>
           <dl>
             <div>
@@ -267,7 +267,7 @@
           <p class="dataset-request-note">Request link for Claudio approval.</p>
         </article>
 
-        <article class="dataset-mobile-card">
+        <article class="dataset-mobile-card" data-dataset-name="Dataset placeholder 5" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-mobile">
           <h3>Dataset placeholder 5</h3>
           <dl>
             <div>
@@ -287,7 +287,7 @@
           <p class="dataset-request-note">Request link for Claudio approval.</p>
         </article>
 
-        <article class="dataset-mobile-card">
+        <article class="dataset-mobile-card" data-dataset-name="Dataset placeholder 6" data-dataset-format="XLSX" data-dataset-version="v1.0" data-analytics-source="dataset-mobile">
           <h3>Dataset placeholder 6</h3>
           <dl>
             <div>
@@ -331,6 +331,7 @@
   <script src="../js/navigation.js"></script>
   <script src="../js/footer.js"></script>
   <script src="../js/cookie-consent.js"></script>
+  <script src="../js/analytics.js"></script>
   <script src="../js/survey.js"></script>
   <script src="../js/downloads.js"></script>
 </body>

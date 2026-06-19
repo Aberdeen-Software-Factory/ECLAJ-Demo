@@ -19,7 +19,8 @@ if (footerMount) {
     <footer>
       <div class="foot-inner">
         <div class="foot-left">
-          <span class="foot-text">UK-CLAD &copy; ${currentYear}</span>
+          <span class="foot-text">&copy; University of Aberdeen, ${currentYear}. All rights reserved.</span>
+          <span class="foot-text">Funded by the University of Aberdeen (Agile Grant, Project ID 12073249).</span>
         </div>
         <nav aria-label="Footer navigation">
           <a href="${base}pages/about.html">About</a>

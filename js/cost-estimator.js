@@ -546,6 +546,17 @@ if (estimatorForm) {
     downloadSpreadsheetButton.addEventListener("click", () => {
       if (currentEstimate) {
         downloadEstimateSpreadsheet(currentEstimate);
+        // Track only after the workbook download is triggered so abandoned or
+        // disabled clicks are not counted as spreadsheet downloads.
+        window.ukCladAnalytics?.trackEvent("estimator_spreadsheet_download", {
+          link_text: downloadSpreadsheetButton.textContent.trim(),
+          link_url: "uk-clad-cost-estimate.xlsx",
+          dataset_name: currentEstimate.labels.phase,
+          dataset_version: currentEstimate.labels.tier,
+          dataset_format: "XLSX",
+          include_non_solicitor_fees: String(currentEstimate.inputs.includeNonSolicitorFees),
+          source: "cost_estimator",
+        });
       }
     });
   }
