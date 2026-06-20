@@ -29,7 +29,7 @@
       <a href="../index.html">Home</a>
       <a href="about.html" aria-current="page">About</a>
       <a href="datasets.html">Datasets</a>
-      <a href="cost-estimator.html">Cost estimator</a>
+      <a href="cost-estimator.html">Cost Estimator</a>
       <a href="contact.html">Contact</a>
       <button class="tbtn theme-toggle" id="tbtn" type="button" aria-label="Toggle theme">
         <svg class="tbtn-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14"
@@ -63,7 +63,7 @@
       <li><a href="../index.html">Home</a></li>
       <li><a href="about.html" aria-current="page">About</a></li>
       <li><a href="datasets.html">Datasets</a></li>
-      <li><a href="cost-estimator.html">Cost estimator</a></li>
+      <li><a href="cost-estimator.html">Cost Estimator</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="tbtn theme-toggle mobile-theme-toggle" type="button" aria-label="Toggle theme">
@@ -88,15 +88,48 @@
   </div>
 
   <main class="page-shell about-page">
-    <section class="about-hero" aria-labelledby="about-title">
-      <h1 id="about-title">About the project</h1>
-      <p>
-        This platform serves as the digital hub for the first comprehensive empirical analysis of private antitrust enforcement and access to justice within the UK Competition Appeal Tribunal (CAT). The project examines a wide range of variables, including case duration, claim types, and the parties involved in litigation related to competition damages claims (Section 47A) and collective actions (Section 47B). Its aims are twofold: firstly, to map litigation trends and identify the main characteristics of competition law cases in the UK; secondly, to assess whether access to justice is genuinely upheld through this system.
-        <br><br>
-        While competition law is theoretically designed to protect markets and consumers from anti-competitive practices, the reality of litigating these claims is often complicated by enforcement complexities and hidden costs. This project systematically analyses over twenty years of judicial data to answer a vital question: Does the current legal framework effectively serve those harmed by monopolistic behaviour and cartels?
-        <br><br>
-        By going beyond doctrinal legal analysis and employing data science and empirical methods, this research seeks to provide clear insights into these issues.
-      </p>
+    <section class="content-grid" aria-labelledby="about-title">
+      <h1 id="about-title">About UK-CLAD</h1>
+      <div class="topic-label">Purpose</div>
+      <p>This platform serves as the digital hub for the first comprehensive empirical analysis of private antitrust enforcement and access to justice within the UK Competition Appeal Tribunal (CAT). The project examines a wide range of variables, including case duration, claim types, and the parties involved in litigation related to competition damages claims (Section 47A) and collective actions (Section 47B).</p>
+      <div class="data-card">
+        <p class="stat-label">Aims</p>
+        <ul class="aims-list">
+          <li>Map litigation trends and identify the main characteristics of competition law cases in the UK</li>
+          <li>Assess whether access to justice is genuinely upheld through this system</li>
+        </ul>
+      </div>
+      <div class="topic-label">Rationale</div>
+      <p>While competition law is theoretically designed to protect markets and consumers from anti-competitive practices, the reality of litigating these claims is often complicated by enforcement complexities and hidden costs. This project systematically analyses over twenty years of judicial data to answer a vital question: Does the current legal framework effectively serve those harmed by monopolistic behaviour and cartels?</p>
+      <p>By going beyond doctrinal legal analysis and employing data science and empirical methods, this research seeks to provide clear insights into these issues.</p>
+      <h2 id="empirical-scope-title">The Empirical Scope &amp; Key Findings</h2>
+      <p>Our database tracks the structural, procedural, and financial realities of the CAT from <strong>2004 to 2025</strong>. By coding unstructured judicial decisions, cost awards, and corporate registries, the study maps the life cycle of over 450 cases.</p>
+      <h2>The Dataset at a Glance</h2>
+      <p class="stat-label">Timeframe &amp; Volume</p>
+      <div class="stat-grid">
+        <div class="data-card stat-card">
+          <span class="stat-label">Timeframe</span>
+          <span class="stat-number">2004–<span class="stat-counter" data-target="2025" data-start="2004">2025</span></span>
+        </div>
+        <div class="data-card stat-card">
+          <span class="stat-label">Distinct proceedings</span>
+          <span class="stat-number stat-counter" data-target="454" data-start="0">454</span>
+        </div>
+        <div class="data-card stat-card">
+          <span class="stat-label">Bilateral Actions (s.47A)</span>
+          <span class="stat-number stat-counter" data-target="385" data-start="0">385</span>
+        </div>
+        <div class="data-card stat-card">
+          <span class="stat-label">Collective Proceedings (s.47B)</span>
+          <span class="stat-number stat-counter" data-target="69" data-start="0">69</span>
+        </div>
+      </div>
+      <p class="stat-label">Entity Profiling</p>
+      <p>To accurately measure Access to Justice, the study deploys algorithmic corporate tracking. This reveals the true corporate size, registered location, and standard industrial classification (SIC) of all litigants, effectively separating independent SMEs from subsidiaries of multinational groups.</p>
+      <p class="stat-label">Final Decisions &amp; The Substantive Success Rate</p>
+      <p>The research systematically codes all available final judgments on the merits. By comparing initial claim values against ultimate judicial awards, the study isolates the actual &#8220;Substantive Success Rate&#8221; of competition litigation.</p>
+      <p class="stat-label">Cost Rulings &amp; Financial Modelling</p>
+      <p>We analysed all published CAT cost judgments to map the empirical gap between claimed legal expenses and awarded costs. This quantitative foundation drives the project&#8217;s Cost Estimator. <a href="cost-estimator.html" class="estimator-link">Open Cost Estimator</a></p>
     </section>
 
     <!--
@@ -145,17 +178,17 @@
         <h2 id="pi-title">Principal Investigator</h2>
       </div>
 
-      <article class="pi-profile-card">
-        <img class="pi-profile-image" src="../assets/images/claudio-lombardi.jpeg" alt="Dr Claudio Lombardi">
-        <div class="pi-profile-main">
-          <h3>Dr Claudio Lombardi <a class="pi-profile-link" href="https://www.abdn.ac.uk/people/claudio.lombardi" target="_blank" rel="noopener noreferrer">University Profile <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:text-top"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+      <article class="profile-card">
+        <img class="profile-image" src="../assets/images/claudio-lombardi.jpeg" alt="Dr Claudio Lombardi">
+        <div class="profile-main">
+          <h3>Dr Claudio Lombardi <a class="profile-link" href="https://www.abdn.ac.uk/people/claudio.lombardi" target="_blank" rel="noopener noreferrer">University Profile <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:text-top"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
           <p>Dr. Lombardi's research focuses on the intersection of competition law and empirical legal studies.</p>
           <p>This project bridges the gap between theoretical antitrust frameworks and the financial realities of litigation, providing policymakers, practitioners, and scholars with open-access, data-driven insights into the functioning of the UK's primary competition court.</p>
         </div>
       </article>
     </section>
 
-    <section class="home-stat acknowledgement" aria-labelledby="acknowledgement-title">
+    <section class="acknowledgement" aria-labelledby="acknowledgement-title">
       <h2 id="acknowledgement-title">Acknowledgments</h2>
       <p>This website was made possible through an Agile grant from the <strong>University of Aberdeen</strong>. Project ID 12073249.</p>
     </section>

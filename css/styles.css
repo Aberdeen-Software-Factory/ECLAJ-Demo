@@ -163,7 +163,6 @@ body {
   transition: color 0.15s ease;
 }
 
-
 .site-nav a::after {
   content: "";
   position: absolute;
@@ -395,27 +394,6 @@ footer button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
-.foot-sep {
-  color: var(--color-border);
-}
-
-.foot-logo {
-  height: 32px;
-  width: 150px;
-  object-fit: contain;
-}
-
-.foot-logo-dark {
-  display: none;
-}
-
-[data-theme="dark"] .foot-logo-light {
-  display: none;
-}
-
-[data-theme="dark"] .foot-logo-dark {
-  display: block;
-}
 
 /* HOME PAGE */
 
@@ -535,29 +513,30 @@ footer button:focus-visible {
   margin-bottom: 1.5rem;
 }
 
-.home-stats {
+.data-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
-.home-stat {
-  background: var(--color-background);
+.data-card {
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  box-shadow: 0 2px 12px rgba(23, 32, 51, 0.07);
 }
 
-.home-stat-label {
+.data-card-label {
   font-size: var(--home-compact-size);
   font-weight: 600;
   color: var(--color-text);
 }
 
-.home-stat-value {
+.data-card-value {
   font-size: var(--home-compact-size);
   color: var(--color-muted);
 }
@@ -565,27 +544,12 @@ footer button:focus-visible {
 @media (max-width: 900px) {
   .home-hero { grid-template-columns: 1fr; }
   .home-cards { grid-template-columns: 1fr; }
-  .home-stats { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 520px) {
-  .home-stats { grid-template-columns: 1fr; }
+  .data-cards { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* COST ESTIMATOR */
 
-.estimator-intro {
-  max-width: 44rem;
-  margin-bottom: 1.75rem;
-}
 
-.estimator-intro h1 {
-  margin-bottom: 0.5rem;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  line-height: 1.05;
-}
-
-.estimator-intro p,
 .estimator-panel p {
   color: var(--color-muted);
 }
@@ -912,13 +876,6 @@ footer button:focus-visible {
   justify-self: flex-start;
 }
 
-@media (max-width: 520px) {
-  .survey-panel {
-    width: 240px;
-    bottom: 4.5rem;
-  }
-}
-
 /* ABOUT PAGE */
 
 .about-page {
@@ -926,23 +883,75 @@ footer button:focus-visible {
   gap: 3rem;
 }
 
-.about-hero {
+.content-grid {
   max-width: 100%;
+  display: grid;
+  gap: 0.75rem;
+}
+
+
+.acknowledgement {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .acknowledgement h2 {
   font-size: 1.25rem;
 }
 
-.about-hero h1 {
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 380px) {
+  .stat-grid { grid-template-columns: 1fr; }
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  justify-content: space-between;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.topic-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  width: fit-content;
+  padding-bottom: 0.4rem;
+  border-bottom: 2.5px solid var(--color-text);
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.content-grid h1 {
   margin-bottom: 0.65rem;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   line-height: 1.05;
 }
 
-.about-hero p,
+.content-grid p,
 .about-card p,
-.pi-profile-card p {
+.profile-card p {
   color: var(--color-muted);
 }
 
@@ -954,11 +963,19 @@ footer button:focus-visible {
 }
 
 .about-card,
-.pi-profile-card {
+.profile-card {
   border: 1px solid var(--color-border);
   border-radius: 6px;
   background: var(--color-surface);
   padding: 1.35rem;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(23, 32, 51, 0.07);
 }
 
 .about-card h2,
@@ -981,9 +998,6 @@ footer button:focus-visible {
   gap: 0.65rem;
   margin: 0;
   padding: 0;
-}
-
-.objective-list {
   list-style: none;
 }
 
@@ -996,6 +1010,51 @@ footer button:focus-visible {
   font-weight: 700;
   line-height: 1.35;
   padding: 0.65rem 0.75rem;
+}
+
+/* Cost Estimator link */
+.estimator-link {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.estimator-link:hover { background: color-mix(in srgb, var(--color-accent) 8%, transparent); }
+
+.aims-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.aims-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.aims-list li::before {
+  content: "✓";
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
 }
 
 .method-placeholder {
@@ -1034,15 +1093,7 @@ footer button:focus-visible {
   line-height: 1.25;
 }
 
-.pi-profile-card {
-  display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr);
-  gap: 1.25rem;
-  align-items: center;
-  box-shadow: 0 2px 12px rgba(23, 32, 51, 0.07);
-}
-
-.pi-profile-image {
+.profile-image {
   width: 100%;
   max-width: 11rem;
   aspect-ratio: 1;
@@ -1051,28 +1102,23 @@ footer button:focus-visible {
   object-fit: cover;
 }
 
-.pi-profile-main {
+.profile-main {
   display: grid;
   gap: 0.45rem;
 }
 
-.pi-profile-card h3 {
+.profile-card h3 {
   margin: 0;
   font-size: 1.45rem;
   line-height: 1.2;
 }
 
-.person-role {
-  margin-top: 0.15rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-}
 
-.pi-profile-card p {
+.profile-card p {
   max-width: 100%;
 }
 
-.pi-profile-link {
+.profile-link {
   background: none;
   border: none;
   color: var(--color-muted);
@@ -1086,7 +1132,7 @@ footer button:focus-visible {
   vertical-align: middle;
 }
 
-.pi-profile-link:hover {
+.profile-link:hover {
   color: var(--color-accent);
 }
 
@@ -1098,17 +1144,6 @@ footer button:focus-visible {
   gap: 1.25rem;
 }
 
-.contact-hero {
-  max-width: 42rem;
-}
-
-.contact-hero h1 {
-  margin-bottom: 0.65rem;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  line-height: 1.05;
-}
-
-.contact-hero p,
 .contact-card p {
   color: var(--color-muted);
 }
@@ -1150,13 +1185,6 @@ footer button:focus-visible {
   max-width: 50rem;
 }
 
-.privacy-hero h1 {
-  margin-bottom: 0.65rem;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  line-height: 1.05;
-}
-
-.privacy-hero p,
 .privacy-section p {
   color: var(--color-muted);
 }
@@ -1228,14 +1256,6 @@ footer button:focus-visible {
   font-size: 0.98rem;
 }
 
-.cookie-banner-actions,
-.cookie-preferences-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: flex-end;
-}
-
 .cookie-banner-actions {
   display: grid;
   justify-content: stretch;
@@ -1263,7 +1283,6 @@ footer button:focus-visible {
 }
 
 .cookie-button-secondary,
-.cookie-button-link,
 .cookie-button-muted,
 .cookie-icon-button,
 .cookie-switch {
@@ -1275,10 +1294,6 @@ footer button:focus-visible {
   border-color: var(--cookie-control-bg);
   background: var(--cookie-control-bg);
   color: var(--cookie-control-text);
-}
-
-.cookie-button-link {
-  color: var(--color-accent);
 }
 
 .cookie-button-muted {
@@ -1526,41 +1541,12 @@ footer button:focus-visible {
 
 /* Datasets hero */
 
-.datasets-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(21rem, 0.52fr);
-  gap: 2rem;
-  align-items: start;
-}
 
-.datasets-hero-copy {
-  max-width: 48rem;
-}
-
-.datasets-hero h1 {
-  margin-bottom: 0.65rem;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  line-height: 1.05;
-}
-
-.datasets-hero p,
 .resource-card p,
 .datasets-panel-placeholder p {
   color: var(--color-muted);
 }
 
-.datasets-image-placeholder {
-  display: grid;
-  min-height: 13.5rem;
-  place-items: center;
-  border: 1px dashed color-mix(in srgb, var(--color-accent) 34%, var(--color-border));
-  border-radius: 6px;
-  background: color-mix(in srgb, var(--color-accent) 5%, var(--color-surface));
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  font-weight: 700;
-  padding: 1.35rem;
-}
 
 /* Top resource cards */
 
@@ -1579,9 +1565,6 @@ footer button:focus-visible {
   gap: 1.25rem;
 }
 
-.resource-grid-two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
 
 .resource-grid-single {
   grid-template-columns: minmax(0, 1fr);
@@ -1647,10 +1630,6 @@ footer button:focus-visible {
   cursor: not-allowed;
 }
 
-.resource-note {
-  margin-top: 0.75rem;
-  font-size: 0.82rem;
-}
 
 /* Dataset downloads table */
 
@@ -1658,13 +1637,6 @@ footer button:focus-visible {
   min-width: 0;
 }
 
-.dataset-downloads h2 {
-  display: inline-block;
-  margin-bottom: 1.25rem;
-  border-bottom: 3px solid var(--color-accent);
-  font-size: 1.55rem;
-  line-height: 1.1;
-}
 
 .dataset-downloads-table-wrap {
   width: 100%;
@@ -1884,16 +1856,15 @@ footer button:focus-visible {
     gap: 1.5rem;
   }
 
-  .datasets-hero,
   .about-card-grid,
   .contact-grid,
   .resource-grid,
   .datasets-detail-grid,
-  .pi-profile-card {
+  .profile-card {
     grid-template-columns: 1fr;
   }
 
-  .pi-profile-link {
+  .profile-link {
     justify-self: start;
   }
 
@@ -1903,6 +1874,8 @@ footer button:focus-visible {
 }
 
 @media (max-width: 700px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+
   .foot-inner {
     flex-direction: column;
     text-align: center;
@@ -1942,6 +1915,8 @@ footer button:focus-visible {
 }
 
 @media (max-width: 520px) {
+  .data-cards { grid-template-columns: 1fr; }
+  .survey-panel { width: 240px; bottom: 4.5rem; }
   .estimator-panel { padding: 1.15rem; }
 
   .datasets-page {
@@ -1952,10 +1927,9 @@ footer button:focus-visible {
     gap: 2rem;
   }
 
-  .datasets-image-placeholder,
   .about-card,
   .contact-card,
-  .pi-profile-card,
+  .profile-card,
   .resource-card,
   .datasets-panel {
     padding: 1.1rem;

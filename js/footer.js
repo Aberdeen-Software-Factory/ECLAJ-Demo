@@ -27,7 +27,6 @@ if (footerMount) {
           <a href="${base}pages/contact.html">Contact</a>
           <a href="${base}pages/privacy.html">Privacy and cookies</a>
           <button type="button" data-cookie-preferences>Cookie preferences</button>
-          <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=TEMP_SURVEY_LINK" data-survey-link>Take the survey</a>
         </nav>
       </div>
     </footer>

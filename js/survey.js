@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
     </button>
-    <p class="survey-panel-heading">Share your feedback</p>
+    <p class="survey-panel-heading">Website Survey</p>
     <p class="survey-panel-body">Help us improve UK-CLAD by taking a short survey.</p>
-    <a href="${SURVEY_URL}" target="_blank" rel="noopener noreferrer" class="survey-panel-btn" data-survey-link>Take the survey</a>
+    <a href="${SURVEY_URL}" target="_blank" rel="noopener noreferrer" class="survey-panel-btn" data-survey-link>Share your feedback</a>
   `;
 
   const tab = document.createElement("button");
