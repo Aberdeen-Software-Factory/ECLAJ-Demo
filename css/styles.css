@@ -5,6 +5,7 @@
   --color-muted: #64748b;
   --color-border: #dbe3ef;
   --color-accent: #174a7c;
+  --color-on-accent: #ffffff;
   --space-page: clamp(1rem, 4vw, 4rem);
   --content-width: 72rem;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -17,6 +18,7 @@
   --color-muted: #94a3b8;
   --color-border: #334155;
   --color-accent: #93c5fd;
+  --color-on-accent: #0f172a;
 }
 
 /* RESET */
@@ -217,6 +219,22 @@ body {
 
 [data-theme="dark"] .nav-uoa-logo-dark {
   display: block;
+}
+
+[data-theme="dark"] .site-header.scrolled {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] #mobile-menu {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .data-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .survey-tab {
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* HAMBURGER MENU */
@@ -556,9 +574,9 @@ footer button:focus-visible {
 
 .estimator-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.82fr);
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
 }
 
 .estimator-side {
@@ -636,7 +654,7 @@ footer button:focus-visible {
   border: 1px solid var(--color-accent);
   border-radius: 4px;
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-accent);
   cursor: pointer;
   font: inherit;
   font-size: 0.9rem;
@@ -674,7 +692,7 @@ footer button:focus-visible {
 .download-actions button:not(:disabled) {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-accent);
   cursor: pointer;
 }
 
@@ -817,7 +835,7 @@ footer button:focus-visible {
   align-items: center;
   padding: 0.45rem 0.85rem;
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
   border-radius: 4px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -841,7 +859,7 @@ footer button:focus-visible {
   border-radius: 6px 0 0 6px;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-on-accent);
   cursor: pointer;
   box-shadow: -2px 2px 8px rgba(23, 32, 51, 0.15);
   opacity: 0;
@@ -863,7 +881,7 @@ footer button:focus-visible {
 .survey-tab-text {
   display: block;
   transform: rotate(180deg);
-  color: #ffffff;
+  color: var(--color-on-accent);
 }
 
 .survey-panel-btn:focus-visible,
@@ -925,6 +943,10 @@ footer button:focus-visible {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-muted);
+}
+
+.stat-section-label {
+  color: var(--color-text) !important;
 }
 
 .topic-label {
@@ -1049,7 +1071,7 @@ footer button:focus-visible {
   height: 1.5rem;
   border-radius: 50%;
   background: var(--color-text);
-  color: #ffffff;
+  color: var(--color-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1170,8 +1192,8 @@ footer button:focus-visible {
 
 .formula-den {
   padding: 0.2rem 0.25rem 0;
-  color: var(--color-muted);
-  font-weight: 500;
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .profile-link {
@@ -1194,7 +1216,9 @@ footer button:focus-visible {
 
 /* CONTACT PAGE */
 
-.contact-page {
+.contact-page,
+.estimator-page,
+.datasets-page {
   display: grid;
   align-content: start;
   gap: 1.25rem;
@@ -1590,11 +1614,6 @@ footer button:focus-visible {
 
 /* DATASETS PAGE */
 
-.datasets-page {
-  display: grid;
-  gap: 3rem;
-}
-
 /* Datasets hero */
 
 
@@ -1624,6 +1643,10 @@ footer button:focus-visible {
 
 .resource-grid-single {
   grid-template-columns: minmax(0, 1fr);
+}
+
+.resource-grid-double {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .resource-card,
@@ -1670,7 +1693,7 @@ footer button:focus-visible {
   border: 1px solid var(--color-accent);
   border-radius: 4px;
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-accent);
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 800;
@@ -2051,7 +2074,7 @@ footer button:focus-visible {
 
 .geography-toggle.active {
   background: var(--color-accent);
-  color: #fff;
+  color: var(--color-on-accent);
 }
 
 /* Legend */

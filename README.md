@@ -2,4 +2,4 @@
 
 Public static demo snapshot for the UK Competition Litigation and Collective Actions Dataset prototype.
 
-Source snapshot: `Aberdeen-Software-Factory/ECLAJ` tag `demo-2026-06-22-2047`.
+Source snapshot: `Aberdeen-Software-Factory/ECLAJ` tag `demo-2026-06-23-0908`.
