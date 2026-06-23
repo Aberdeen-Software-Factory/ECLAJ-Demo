@@ -316,7 +316,7 @@ function createEstimateSpreadsheetRows(estimate) {
     const inputRow = inputRows[index] || ["", ""];
     const outputRow = outputRows[index] || ["", ""];
 
-    return [inputRow[0], inputRow[1], "", outputRow[0], outputRow[1]];
+    return [inputRow[0], inputRow[1], outputRow[0], outputRow[1]];
   });
 }
 
@@ -335,14 +335,13 @@ function buildEstimateWorksheetXml(estimate) {
   <cols>
     <col min="1" max="1" width="28" customWidth="1"/>
     <col min="2" max="2" width="24" customWidth="1"/>
-    <col min="3" max="3" width="4" customWidth="1"/>
-    <col min="4" max="4" width="32" customWidth="1"/>
-    <col min="5" max="5" width="24" customWidth="1"/>
+    <col min="3" max="3" width="32" customWidth="1"/>
+    <col min="4" max="4" width="24" customWidth="1"/>
   </cols>
   <sheetData>
     <row r="1">
       <c t="inlineStr"><is><t>Inputs</t></is></c>
-      <c/><c/>
+      <c/>
       <c t="inlineStr"><is><t>Outputs</t></is></c>
     </row>
     <row r="2"/>
@@ -350,7 +349,7 @@ function buildEstimateWorksheetXml(estimate) {
   </sheetData>
   <mergeCells count="2">
     <mergeCell ref="A1:B1"/>
-    <mergeCell ref="D1:E1"/>
+    <mergeCell ref="C1:D1"/>
   </mergeCells>
 </worksheet>`;
 }
@@ -491,6 +490,17 @@ function buildEstimateSpreadsheetXlsx(estimate) {
   ]);
 }
 
+function createEstimateSpreadsheetFilename(date = new Date()) {
+  const pad = (value) => String(value).padStart(2, "0");
+  const year = date.getFullYear();
+  const month = pad(date.getMonth() + 1);
+  const day = pad(date.getDate());
+  const hours = pad(date.getHours());
+  const minutes = pad(date.getMinutes());
+
+  return `uk-clad-cost-estimate-${year}-${month}-${day}-${hours}${minutes}.xlsx`;
+}
+
 function downloadEstimateSpreadsheet(estimate) {
   const blob = new Blob([buildEstimateSpreadsheetXlsx(estimate)], {
     type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -499,7 +509,7 @@ function downloadEstimateSpreadsheet(estimate) {
   const link = document.createElement("a");
 
   link.href = url;
-  link.download = "uk-clad-cost-estimate.xlsx";
+  link.download = createEstimateSpreadsheetFilename();
   document.body.append(link);
   link.click();
   link.remove();

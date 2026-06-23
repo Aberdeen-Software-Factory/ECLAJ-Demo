@@ -1036,17 +1036,15 @@ footer button:focus-visible {
 
 /* Cost Estimator link */
 .estimator-link {
-  display: inline-block;
-  font-size: 0.75rem;
   font-weight: 600;
   color: var(--color-accent);
-  border: 1.5px solid var(--color-accent);
-  border-radius: 999px;
-  padding: 0.15rem 0.6rem;
-  text-decoration: none;
-  vertical-align: middle;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
 }
-.estimator-link:hover { background: color-mix(in srgb, var(--color-accent) 8%, transparent); }
+
+.estimator-link:hover {
+  text-decoration-thickness: 0.12em;
+}
 
 .aims-list {
   list-style: none;
@@ -1254,6 +1252,17 @@ footer button:focus-visible {
 
 .contact-card p {
   font-size: 0.94rem;
+}
+
+.contact-details {
+  color: var(--color-muted);
+  font-size: 0.94rem;
+  font-style: normal;
+  line-height: 1.65;
+}
+
+.contact-details strong {
+  color: var(--color-text);
 }
 
 /* PRIVACY PAGE */
