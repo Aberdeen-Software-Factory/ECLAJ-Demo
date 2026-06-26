@@ -72,8 +72,31 @@
     maxZoom: 13,
   }).addTo(map);
 
-  // Use a LayerGroup so we can call clearLayers() cleanly
-  const markerLayer = L.layerGroup().addTo(map);
+  function clusterIcon(cluster) {
+    const count = cluster.getAllChildMarkers().reduce((sum, m) => sum + (m.options.caseCount || 0), 0);
+    const size = count >= 100 ? 48 : count >= 50 ? 40 : 34;
+    const fontSize = Math.max(9, Math.round(size * 0.38));
+    return L.divIcon({
+      className: "",
+      html: `<div class="geo-circle" style="width:${size}px;height:${size}px;background:${tierColor(count)};font-size:${fontSize}px">${count}</div>`,
+      iconSize: [size, size],
+      iconAnchor: [size / 2, size / 2],
+    });
+  }
+
+  // Use a MarkerClusterGroup so dense areas collapse into aggregate bubbles when zoomed out
+  const markerLayer = L.markerClusterGroup({
+    iconCreateFunction: clusterIcon,
+    maxClusterRadius: 60,
+    showCoverageOnHover: false,
+    zoomToBoundsOnClick: true,
+    spiderfyOnMaxZoom: false,
+    disableClusteringAtZoom: 10,
+  }).addTo(map);
+
+  // Track the current max count so cluster icons can scale correctly
+  let _clusterMaxCount = 1;
+  function clusterMaxCount() { return _clusterMaxCount; }
 
   // State — plain objects so we can read active buttons directly from the DOM
   let activeSectors = new Set(MAP_DATA.sectors);
@@ -114,6 +137,7 @@
     const counts = {};
     for (const area of allAreas) counts[area] = areaTotal(area, views);
     const maxCount = Math.max(...Object.values(counts), 1);
+    _clusterMaxCount = maxCount;
 
     for (const area of allAreas) {
       const centroid = MAP_DATA.centroids[area];
@@ -132,7 +156,7 @@
         iconAnchor: [size / 2, size / 2],
       });
 
-      const marker = L.marker(centroid, { icon });
+      const marker = L.marker(centroid, { icon, caseCount: count });
 
       const cityName = AREA_NAMES[area] ?? area;
 

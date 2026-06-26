@@ -52,7 +52,7 @@
     modal.innerHTML = `
       <div class="cookie-preferences-panel">
         <div class="cookie-preferences-heading">
-          <h2 id="cookie-preferences-title">Cookie settings - <span style="color: red;">STILL TO CONFIRM EXACT TEXT</span></h2>
+          <h2 id="cookie-preferences-title">Cookie settings</h2>
           <button class="cookie-icon-button" type="button" data-cookie-close aria-label="Close cookie preferences">x</button>
         </div>
         <div class="cookie-preferences-body">
@@ -77,7 +77,7 @@
             <div class="cookie-option-summary" data-cookie-toggle-details role="button" tabindex="0" aria-expanded="true">
               <span class="cookie-option-chevron" aria-hidden="true">^</span>
               <span>Analytics cookies</span>
-              <button class="cookie-switch" type="button" data-cookie-analytics-toggle aria-pressed="false">
+              <button class="cookie-switch" type="button" data-cookie-analytics-toggle aria-label="Toggle analytics cookies" aria-pressed="false">
                 <span class="cookie-switch-knob">
                   <span class="cookie-switch-icon cookie-switch-icon-on"></span>
                   <span class="cookie-switch-icon cookie-switch-icon-off"></span>
@@ -93,7 +93,7 @@
         </div>
         <div class="cookie-modal-footer">
           <button type="button" class="cookie-button cookie-button-primary" data-cookie-accept>Accept all cookies</button>
-          <button type="button" class="cookie-button cookie-button-primary" data-cookie-reject>Accept necessary only</button>
+          <button type="button" class="cookie-button cookie-button-secondary" data-cookie-reject>Accept necessary only</button>
           <button type="button" class="cookie-button cookie-button-secondary" data-cookie-save>Save preferences</button>
         </div>
       </div>
