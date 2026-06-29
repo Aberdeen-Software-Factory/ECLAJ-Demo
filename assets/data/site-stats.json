@@ -1,0 +1,31 @@
+{
+  "publicStats": {
+    "timeframeStart": 2004,
+    "timeframeEnd": 2025,
+    "timeframeLabel": "2004-2025",
+    "caseSummary": "over 450 cases",
+    "distinctProceedings": 454,
+    "bilateralActions": 385,
+    "collectiveProceedings": 69,
+    "homeCases": "Over 450",
+    "homeActionTypes": "s.47A and s.47B",
+    "homeDownloads": "To confirm"
+  },
+  "sourceRows": {
+    "smeAnalysis": null,
+    "collectiveActions": null,
+    "total": null
+  },
+  "mapSource": {
+    "rows": null,
+    "sectors": null,
+    "ukClaimantEntries": null,
+    "ukDefendantEntries": null,
+    "internationalClaimantEntries": null,
+    "internationalDefendantEntries": null
+  },
+  "notes": [
+    "Bootstrap values preserve the currently approved public page numbers.",
+    "Run scripts/generate-site-data.py after source workbook definitions are confirmed."
+  ]
+}

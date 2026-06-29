@@ -1,6 +1,23 @@
 (function () {
   const mapEl = document.getElementById("geography-map");
-  if (!mapEl || typeof L === "undefined" || typeof MAP_DATA === "undefined") return;
+  if (!mapEl || typeof L === "undefined") return;
+
+  const scriptUrl = document.currentScript?.src || window.location.href;
+  const mapDataUrl = new URL("../assets/data/map-data.json", scriptUrl);
+
+  fetch(mapDataUrl, { cache: "no-store" })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Could not load map data: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(initialiseMap)
+    .catch((error) => {
+      console.warn(error.message);
+    });
+
+  function initialiseMap(mapData) {
 
   const AREA_NAMES = {
     AB: "Aberdeen",        AL: "St Albans",         B:  "Birmingham",
@@ -99,7 +116,7 @@
   function clusterMaxCount() { return _clusterMaxCount; }
 
   // State — plain objects so we can read active buttons directly from the DOM
-  let activeSectors = new Set(MAP_DATA.sectors);
+  let activeSectors = new Set(mapData.sectors);
 
   function activeViews() {
     return [...document.querySelectorAll("[data-map-view].active")].map((b) => b.dataset.mapView);
@@ -112,7 +129,7 @@
   function areaTotal(area, views) {
     let n = 0;
     for (const view of views) {
-      const areaData = MAP_DATA.uk[view]?.[area];
+      const areaData = mapData.uk[view]?.[area];
       if (!areaData) continue;
       for (const s of activeSectors) n += areaData[s] || 0;
     }
@@ -130,8 +147,8 @@
     if (!regions.includes("uk")) return;
 
     const allAreas = new Set([
-      ...Object.keys(MAP_DATA.uk.claimants),
-      ...Object.keys(MAP_DATA.uk.defendants),
+      ...Object.keys(mapData.uk.claimants),
+      ...Object.keys(mapData.uk.defendants),
     ]);
 
     const counts = {};
@@ -140,7 +157,7 @@
     _clusterMaxCount = maxCount;
 
     for (const area of allAreas) {
-      const centroid = MAP_DATA.centroids[area];
+      const centroid = mapData.centroids[area];
       if (!centroid) continue;
 
       const count = counts[area];
@@ -172,7 +189,7 @@
 
       const combined = {};
       for (const view of views) {
-        const areaData = MAP_DATA.uk[view]?.[area] || {};
+        const areaData = mapData.uk[view]?.[area] || {};
         for (const s of activeSectors) {
           if (areaData[s]) combined[s] = (combined[s] || 0) + areaData[s];
         }
@@ -209,7 +226,7 @@
   // Sector checkboxes
   const filterEl = document.getElementById("geography-sectors");
   if (filterEl) {
-    MAP_DATA.sectors.forEach((sector) => {
+    mapData.sectors.forEach((sector) => {
       const label = document.createElement("label");
       label.className = "geography-sector-label";
       const cb = document.createElement("input");
@@ -251,5 +268,6 @@
     });
   });
 
-  renderMarkers();
+    renderMarkers();
+  }
 })();
